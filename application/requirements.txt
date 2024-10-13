@@ -1,0 +1,13 @@
+streamlit
+langchain
+langchain-community
+langchain-core
+langchain_huggingface
+sentence-transformers
+faiss-cpu
+huggingface-hub
+ollama
+tiktoken
+llama_cpp_python
+langchain_ollama
+unstructured[docx]
