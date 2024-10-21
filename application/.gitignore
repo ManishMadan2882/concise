@@ -2,4 +2,7 @@
 venv
 .env
 *.pdf
-rag/vectorstore
+rag/vectorstore/df_faiss/*
+__pycache__/*
+*.faiss
+*.pdf
