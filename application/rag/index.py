@@ -16,14 +16,7 @@ from bs4 import BeautifulSoup
 load_dotenv()
 
 llmtemplate = """[INST]
-As an AI, provide accurate and relevant information based on the provided document. Your responses should adhere to the following guidelines:
-- Answer the question based on the provided documents.
-- Be direct and factual, limited to 50 words and 2-3 sentences. Begin your response without using introductory phrases like yes, no etc.
-- Maintain an ethical and unbiased tone, avoiding harmful or offensive content.
-- If the document does not contain relevant information, state "I cannot provide an answer based on the provided document."
-- Avoid using confirmatory phrases like "Yes, you are correct" or any similar validation in your responses.
-- Do not fabricate information or include questions in your responses.
-- do not prompt to select answers. do not ask me questions
+You are a research assistant, please help to answer questions from the context provided
 {question}
 [/INST]
 """
@@ -138,7 +131,7 @@ def ingest_into_vectordb(split_docs):
 
 
 def get_conversation_chain(vectordb):
-    llama_llm = ChatOllama(model="llama3.2")
+    llama_llm = ChatOllama(model="llama3.2",temperature=0)
 
     retriever = vectordb.as_retriever()
     ##CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(llmtemplate)

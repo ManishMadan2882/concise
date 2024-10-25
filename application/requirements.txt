@@ -10,5 +10,5 @@ ollama
 tiktoken
 llama_cpp_python
 langchain_ollama
+PyPDF2
 unstructured[docx]
-weasyprint
